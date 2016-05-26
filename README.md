@@ -1,8 +1,7 @@
 # Docker Sonarr (previously NzbDrone)
 
 ### Tags
-- tuxeh/sonarr:**latest** - Installs from Sonarr master repository
-- tuxeh/sonarr:**develop** - Installs from Sonarr develop repository
+- michaelcoll/odroid-c2-sonarr:**latest** - Installs from Sonarr master repository
 
 ### Ports
 - **TCP 8989** - Web Interface
