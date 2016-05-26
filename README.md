@@ -18,12 +18,27 @@ Docker runs as uid 65534 (nobody on debian, nfsnobody on fedora). When mounting 
 
 The quickest way to get it running without integrating with a download client or media server (plex)
 ```
-sudo docker run --restart always --name sonarr -p 8989:8989 -v /path/to/your/media/folder/:/volumes/media -v /path/to/your/completed/downloads:/volumes/completed tuxeh/sonarr
+sudo docker run \
+  --restart always \
+  --name sonarr \
+  -p 8989:8989 \
+  -v /path/to/your/media/folder/:/volumes/media \
+  -v /path/to/your/completed/downloads:/volumes/completed \
+  -v /path/to/your/config:/volume/config \
+  michaelcoll/odroid-c2-sonarr 
 ```
 
 You can link to the download client's volumes and plex using something similar:
 ```
-sudo docker run --restart always --name sonarr --volumes-from plex --link plex:plex --volumes-from deluge --link deluge:deluge -p 8989:8989 tuxeh/sonarr
+sudo docker run \
+  --restart always \
+  --name sonarr \
+  --volumes-from plex \
+  --link plex:plex \
+  --volumes-from deluge \
+  --link deluge:deluge \
+  -p 8989:8989 \
+  michaelcoll/odroid-c2-sonarr
 ```
 
 ## Updating

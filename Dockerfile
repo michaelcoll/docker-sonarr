@@ -1,7 +1,12 @@
-FROM debian:wheezy
-MAINTAINER tuxeh <sirtuxeh@gmail.com>
+FROM michaelcoll/odroid-c2-armhf-base 
 
-# mono 3.10 currently doesn't install in debian jessie due to libpeg8 being removed.
+MAINTAINER Michael COLL <mick.coll@gmail.com>
+
+RUN apt-get update \
+  && apt-get install -qy software-properties-common \
+  && add-apt-repository universe \
+  && apt-get remove -qy software-properties-common \
+  && apt-get autoremove -qy
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
   && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC \
