@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-docker build --rm -t michaelcoll/odroid-c2-sonarr .
+wget http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz -O - | gunzip > nzbdrone.tar
+docker build --rm -t michaelcoll/armhf-sonarr .

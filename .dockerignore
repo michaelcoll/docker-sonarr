@@ -2,6 +2,9 @@
 .git
 .gitignore
 
+# IntelliJ
+.idea
+
 # Local config files
 .editorconfig
 
@@ -9,5 +12,5 @@
 buildCache.sh
 
 # Information files
-LICENSE
+LICENSE.md
 README.md
